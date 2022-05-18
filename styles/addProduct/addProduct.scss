@@ -1,0 +1,81 @@
+@import "../shared/shared.scss";
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    flex-direction: column;
+
+}
+
+button {
+    cursor: pointer;
+}
+
+.errormsg,
+.optionError {
+    color: red;
+}
+
+header {
+    border-bottom: solid 1px black;
+    padding-block: 40px;
+    padding-inline: 20px;
+
+    div {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: clamp(5px, 2vw, 20px);
+
+        button {
+            padding-block: 15px;
+            width: 120px;
+        }
+    }
+    
+}
+
+main {
+    form {
+        width: 250px;
+        height: max-content;
+        flex-direction: column;
+        margin: 20px;
+        gap: 10px;
+
+        select {
+            width: 120px;
+            padding: 5px;
+        }
+
+        div input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .switchInputs {
+            margin-top: 10px;
+
+            p {
+                margin-top: 10px;
+            }
+        }
+
+        .switchInputs {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.footer {
+    padding-block: 50px;
+    width: 100%;
+    border-top: solid 1px black;
+    margin-top: auto;
+    text-align: center;
+}
+

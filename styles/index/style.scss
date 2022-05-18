@@ -1,0 +1,91 @@
+@import "../shared/shared.scss";
+
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    flex-direction: column;
+
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    border-bottom: solid 1px black;
+    padding-block: 40px;
+    padding-inline: 25px;
+
+    div {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: clamp(5px, 2vw, 20px);
+
+        button {
+            padding-block: 15px;
+            width: 120px;
+        }
+    }
+    
+}
+
+main {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-block: 20px;
+        padding-inline: clamp(10px, 5vw, 25px);
+        gap: 20px;
+
+        form {
+            display: flex;
+        }
+
+        .products {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 40px;
+            width: 100%;
+            max-width: 240px;
+            height: 210px;
+            border: solid 1px black;
+            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+        
+            .delete-checkbox {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                transform: scale(1.5);
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .products {
+              max-width: 100%;
+            }
+        }
+
+    }
+
+    
+
+}
+
+.footer {
+    padding-block: 50px;
+    width: 100%;
+    border-top: solid 1px black;
+    margin-top: auto;
+    text-align: center;
+}

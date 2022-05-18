@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.spaceBetween {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.align {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+.errormsg,
+.optionError {
+  color: red;
+}
+
+header {
+  border-bottom: solid 1px black;
+  padding-block: 40px;
+  padding-inline: 20px;
+}
+
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: clamp(5px, 2vw, 20px);
+}
+
+header div button {
+  padding-block: 15px;
+  width: 120px;
+}
+
+main form {
+  width: 250px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+  gap: 10px;
+}
+
+main form select {
+  width: 120px;
+  padding: 5px;
+}
+
+main form div input {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+main form .switchInputs {
+  margin-top: 10px;
+}
+
+main form .switchInputs p {
+  margin-top: 10px;
+}
+
+main form .switchInputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer {
+  padding-block: 50px;
+  width: 100%;
+  border-top: solid 1px black;
+  margin-top: auto;
+  text-align: center;
+}
+/*# sourceMappingURL=addProduct.css.map */
