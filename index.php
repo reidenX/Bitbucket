@@ -26,7 +26,7 @@
         <main>
                 <form class="container" action="controllers/productremove.php" method="POST" id="productList">
                     <?php
-                        $viewProducts = new View();//Variables from dbh.php
+                        $viewProducts = new View();
                         $viewProducts->access();
                     ?>
                 </form>

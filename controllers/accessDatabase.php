@@ -51,25 +51,41 @@ class View extends Database {
 
 class Add extends Database {
     public function access(){
-        require "../classes/productadder.php";
         
-        $newProduct = new Products($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['option']);
+    }
 
-        $sql = "INSERT INTO products (sku, name, price, optiontype) VALUES ('{$newProduct->addSku()}',
-        '{$newProduct->addName()}', '{$newProduct->addPrice()}', '{$newProduct->addOption()}');";
-        mysqli_query($this->conn, $sql);
+    public function add($sku, $name, $option){
+
+        if(isset($_POST[$sku]) && isset($_POST[$name]) && isset($_POST[$option])){
+            require "../classes/productadder.php";
+        
+            $newProduct = new Products($_POST['sku'], $_POST['name'], $_POST['price'], $_POST['option']);
+
+            $sql = "INSERT INTO products (sku, name, price, optiontype) VALUES ('{$newProduct->addSku()}',
+            '{$newProduct->addName()}', '{$newProduct->addPrice()}', '{$newProduct->addOption()}');";
+            mysqli_query($this->conn, $sql);
+        }
+
     }
 }
 
 class Delete extends Database {
     public function access(){
-        if(isset($_POST['selectedProducts'])){
-            $products = $_POST['selectedProducts'];
-            for($i = 0; $i < count($products); $i++){
-                $sql = "DELETE FROM products WHERE sku='{$products[$i]}';";
-                mysqli_query($this->conn, $sql);
+        
+    }
+
+    public function delete($deletButton){
+
+        if(isset($_POST[$deletButton])){
+            if(isset($_POST['selectedProducts'])){
+                $products = $_POST['selectedProducts'];
+                for($i = 0; $i < count($products); $i++){
+                    $sql = "DELETE FROM products WHERE sku='{$products[$i]}';";
+                    mysqli_query($this->conn, $sql);
+                }
             }
         }
+
     }
 }
 
@@ -89,13 +105,10 @@ class SkuChecker extends Database {
     }
 }
 
-if(isset($_POST['deleteBtn'])){  //deletes from database
-    $deleteProduct = new Delete();
-    $deleteProduct->access();
-}
+//deletes from database
+$deleteProduct = new Delete();
+$deleteProduct->delete('deleteBtn');
 
-if(isset($_POST['sku']) && isset($_POST['name']) && isset($_POST['option'])){  //adds to database
-    $addProduct = new Add();
-    $addProduct->access();
-}   
-
+//adds to database
+$addProduct = new Add();
+$addProduct->add('sku', 'name', 'option');
